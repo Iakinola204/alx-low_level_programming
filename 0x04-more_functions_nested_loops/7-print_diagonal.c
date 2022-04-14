@@ -3,7 +3,7 @@
  * print_diagonal - check the code
  * @n: limit
  *
- * Return: Always 0.
+ * Return: void
  */
 void print_diagonal(int n)
 {
