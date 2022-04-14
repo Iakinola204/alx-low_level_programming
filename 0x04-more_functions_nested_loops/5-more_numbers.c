@@ -19,7 +19,7 @@ while (result <= 14)
 {
 if (result < 10)
 {
-second number = result;
+second_number = result;
 }
 
 else
