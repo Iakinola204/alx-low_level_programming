@@ -2,6 +2,7 @@
 
 /**
  * print_square - check the code
+ * @size: limit
  *
  * Return: Always 0.
  */
