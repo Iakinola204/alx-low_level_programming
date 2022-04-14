@@ -2,40 +2,26 @@
 /**
  * more_numbers - check the code
  *
- * Return: Always 0.
+ * Return: void
  */
 void more_numbers(void)
 {
-int i;
-int first_number;
-int second_number;
-int result;
+	int i, j, a;
 
-i = 0;
-result = 0;
-while (i < 10)
-{
-while (result <= 14)
-{
-if (result < 10)
-{
-second_number = result;
-}
-
-else
-{
-first_number = result / 10;
-second_number = result % 10;
-_putchar (first_number + '0');
-}
-
-_putchar (second_number + '0');
-
-result++;
-}
-i++;
-result = 0;
-_putchar ('\n')
-}
-
+	for (a = 0; a < 10; a++)
+	{
+		for (i = 0; i <= 1; i++)
+		{
+			for (j = 0; j <= 9; j++)
+			{
+				if (!(i == 1 && j >= 5))
+				{
+					if (i)
+						_putchar(i + '0');
+					_putchar(j + '0');
+				}
+			}
+		}
+		_putchar('\n');
+	}
 }
