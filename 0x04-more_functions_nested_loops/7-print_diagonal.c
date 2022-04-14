@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * print_diagonal - check the code
  * @n: limit
@@ -23,3 +24,4 @@ void print_diagonal(int n)
 			_putchar('\n');
 		}
 	}
+}
