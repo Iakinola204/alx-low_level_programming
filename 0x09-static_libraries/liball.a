@@ -1,0 +1,460 @@
+!<arch>
+0-isupper.c/    0           0     0     644     198       `
+#include "main.h"
+/**
+ * _isupper - evaluate if letter is uppercase
+ * @c: print int
+ * Return: Always 0
+ */
+
+int _isupper(int c)
+{
+if (c >= 'A' && c <= 'Z')
+{
+return (1);
+}
+
+else
+{
+return (0);
+}
+}
+0-memset.c/     0           0     0     644     268       `
+#include "main.h"
+/**
+ * _memset - main
+ * @s: main
+ * @b: main
+ * @n: main
+ * Return: dest
+ */
+char *_memset(char *s, char b, unsigned int n)
+{
+unsigned int i;
+/*Declaring FOR*/
+for (i = 0; i < n; i++)
+{
+*(s + i) = b; /*add 1 position s*/
+} /*END FOR*/
+return (s);
+}
+0-strcat.c/     0           0     0     644     273       `
+#include "main.h"
+/**
+ * _strcat - main
+ * @dest: main
+ * @src: main
+ * Return: dest
+ */
+char *_strcat(char *dest, char *src)
+{
+int i, j;
+i = 0;
+while (dest[i] != '\0')
+{
+i++;
+}
+j = 0;
+while (src[j] != '\0')
+{
+dest[i] = src[j];
+j++;
+i++;
+}
+dest[i] = '\0';
+return (dest);
+}
+
+100-atoi.c/     0           0     0     644     537       `
+#include "main.h"
+
+/**
+ * is_numerical - check if it is a digit
+ * @n: Number
+ * Return: if is a number, return 1 else return 0
+ */
+int is_numerical(unsigned int n)
+{
+return (n >= '0' && n <= '9');
+}
+
+/**
+ * _atoi - main
+ * @s: string
+ *
+ * Return: Return the num
+ */
+int _atoi(char *s)
+{
+unsigned int number, i;
+int sign;
+sign = 1;
+number = 0;
+
+for (i = 0; s[i] != '\0'; i++)
+{
+if (is_numerical(s[i]))
+{
+number = (s[i] - 48) + number * 10;
+
+if (s[i + 1] == ' ')
+break;
+}
+else if (s[i] == '-')
+{
+sign *= -1;
+}
+}
+return (number *sign);
+}
+
+1-isdigit.c/    0           0     0     644     179       `
+#include "main.h"
+/**
+ * _isdigit - check the code
+ * @c: print int
+ * Return: Always 0.
+ */
+
+int _isdigit(int c)
+{
+if (c >= 48 && c <= 57)
+{
+return (1);
+}
+else
+{
+return (0);
+}
+}
+
+1-memcpy.c/     0           0     0     644     312       `
+#include "main.h"
+/**
+ * _memcpy - main
+ * @dest: main
+ * @src: main
+ * @n: main
+ * Return: dest
+ */
+char *_memcpy(char *dest, char *src, unsigned int n)
+{
+unsigned int i;
+i = 0;
+while (i < n)  /*Declaring WHILE*/
+{
+*(dest + i) = *(src + i); /*add 1 position dest and src*/
+i++;
+} /*END WHILE*/
+return (dest);
+}
+1-strncat.c/    0           0     0     644     304       `
+#include "main.h"
+/**
+ * _strncat - main
+ * @dest: main
+ * @src: main
+ * @n: value
+ * Return: dest
+ */
+char *_strncat(char *dest, char *src, int n)
+{
+int i, j;
+i = 0;
+while (dest[i] != '\0')
+{
+i++;
+}
+j = 0;
+while (j < n && src[j] != '\0')
+{
+dest[i] = src[j];
+j++;
+i++;
+}
+dest[i] = '\0';
+return (dest);
+}
+2-strchr.c/     0           0     0     644     344       `
+#include "main.h"
+/**
+ * _strchr - main
+ * @s: main
+ * @c: main
+ * Return: Pointer to the first occurrence of the character c in the string s
+ **/
+char *_strchr(char *s, char c)
+{
+while (*s != '\0') /*Declaring WHILE*/
+{
+if (*s == c) /*if s ==  c*/
+{
+return (s); /*return s*/
+}
+++s;
+}
+if (*s == c)
+{
+return (s);
+}
+return (0);/* values null*/
+}
+2-strlen.c/     0           0     0     644     156       `
+#include "main.h"
+/**
+ * _strlen - main
+ * @s: main
+ *
+ * Return: void
+ */
+int _strlen(char *s)
+{
+int x;
+x = 0;
+while (s[x] != '\0')
+{
+x++;
+}
+return (x);
+}
+2-strncpy.c/    0           0     0     644     279       `
+#include "main.h"
+/**
+ * _strncpy - main
+ * @dest: main
+ * @src: main
+ * @n: value
+ * Return: dest
+ */
+char *_strncpy(char *dest, char *src, int n)
+{
+int i;
+i = 0;
+while (i < n && src[i] != '\0')
+{
+dest[i] = src[i];
+i++;
+}
+while (i < n)
+{
+dest[i] = '\0';
+i++;
+}
+return (dest);
+}
+
+3-islower.c/    0           0     0     644     248       `
+#include "main.h"
+
+/**
+ * _islower - checks if a character is lower case.
+ * @c: the character to be checked
+ *
+ * Return: 1 if character is lowercase, 0 otherwise.
+ */
+int _islower(int c)
+{
+if (c >= 'a' && c <= 'z')
+return (1);
+else
+return (0);
+}
+3-puts.c/       0           0     0     644     186       `
+#include "main.h"
+/**
+ * _puts - main
+ * @str: main
+ *
+ * Return: void
+ */
+void _puts(char *str)
+{
+char *c;
+int n;
+c = str;
+for (n = 0; c[n]; n++)
+{
+_putchar (c[n]);
+}
+_putchar('\n');
+}
+3-strcmp.c/     0           0     0     644     287       `
+#include "main.h"
+/**
+ * _strcmp - main
+ * @s1: main
+ * @s2: main
+ * Return: dest
+ */
+int _strcmp(char *s1, char *s2)
+{
+char *str_one = s1;
+char *str_two = s2;
+while (*str_one != '\0' && *str_two != '\0' && *str_one == *str_two)
+{
+str_one++;
+str_two++;
+}
+return (*str_one - *str_two);
+}
+
+3-strspn.c/     0           0     0     644     559       `
+#include "main.h"
+/**
+ * _strspn - main
+ * @s: main
+ * @accept: main
+ * Return: return count
+ **/
+unsigned int _strspn(char *s, char *accept)
+{
+int i, j;
+int count = 0;
+char *str1, *str2;
+str1 = s;
+str2 = accept;
+i = 0;
+while (str1[i] != '\0') /*Declaring WHILE *s */
+{
+j = 0;
+while (str2[j] != '\0') /*Declaring WHILE *accept*/
+{
+if (str2[j] == str1[i]) /*Evaluate condition*/
+{
+count++; /*count number*/
+break;
+}
+j++;    /*add j+1*/
+}
+if (s[i] != accept[j]) /*If aren't equals*/
+{
+break;
+}
+i++; /*add x+1*/
+}
+return (count); /*return the value of count*/
+}
+
+4-isalpha.c/    0           0     0     644     298       `
+#include "main.h"
+
+/**
+ * _isalpha - Checks if a character is alphabetic.
+ * @c: the character to be checked.
+ *
+ * Return: 1 if character is letter, lowercase or uppercase, 0 otherwise.
+ */
+int _isalpha(int c)
+{
+if ((c >= 'a' && c <= 'z') ||
+(c >= 'A' && c <= 'Z'))
+return (1);
+else
+return (0);
+}
+4-strpbrk.c/    0           0     0     644     377       `
+#include "main.h"
+/**
+ * _strpbrk - main
+ * @s: main
+ * @accept: main
+ *Return: string s that matches any character specified in accept
+ **/
+char *_strpbrk(char *s, char *accept)
+{
+int j;
+while (*s != '\0') /*Declaring WHILE*/
+{
+j = 0;
+while (accept[j] != '\0')  /*Evaluating *accept*/
+{
+if (*s == accept[j])
+{
+return (s);
+}
+j++; /*add j+1*/
+}
+s++; /*add s+1*/
+}
+return (0);
+}
+
+5-strstr.c/     0           0     0     644     437       `
+#include "main.h"
+/**
+ * _strstr - main
+ * @haystack: main
+ * @needle: main
+ * Return: return 0
+ **/
+char  *_strstr(char *haystack, char *needle)
+{
+char *str1, *str2; /*Declaring variables*/
+while (*haystack != '\0')
+{
+str1 = haystack; /*values*/
+str2 = needle;
+/*Star WHILE*/
+while (*haystack != '\0' && *str2 != '\0' && *haystack == *str2)
+{
+haystack++;
+str2++;
+}
+if (*str2 == '\0')
+return (str1);
+haystack = str1 + 1;
+}
+return (0);
+}
+
+6-abs.c/        0           0     0     644     226       `
+#include "main.h"
+
+/**
+ * _abs - computes the absolute value of an integer.
+ * @n: the integer to be computed.
+ *
+ * Return: the absolute value of the integer.
+ */
+int _abs(int n)
+{
+if (n >= 0)
+return (n);
+else
+return (-n);
+}
+9-strcpy.c/     0           0     0     644     225       `
+#include "main.h"
+/**
+ * _strcpy - main
+ * @dest: main
+ * @src: main
+ * Return: dest
+ */
+char *_strcpy(char *dest, char *src)
+{
+int i;
+i = 0;
+while (src[i] != '\0')
+{
+dest[i] = src[i];
+i++;
+}
+dest[i] = '\0';
+return (dest);
+}
+
+_putchar.c/     0           0     0     644     245       `
+#include <unistd.h>
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
+{
+return (write(1, &c, 1));
+}
+
