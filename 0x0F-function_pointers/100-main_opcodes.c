@@ -1,28 +1,35 @@
-#include "function_pointers.h"
-
+#include <stdio.h>
+#include <stdlib.h>
 /**
- *main -  prints the opcodes of its own main function.
- *@argc: integer value.
- *@argv: character value.
- *
- *Return: 0(success)
+ * main - main
+ * @argc: main
+ * @argv: main
+ * Return: main
  */
 int main(int argc, char *argv[])
 {
-	int i;
-
-	if (argc != 2)
-	{
-		printf("Error\n");
-		exit(1);
-	}
-	if (atoi(argv[1]) < 0)
-	{
-		printf("Error\n");
-		exit(2);
-	}
-	for (i = 0; i < atoi(argv[1]) - 1; i++)
-		printf("%02hhx ", ((char *)main)[i]);
-	printf("%02hhx\n", ((char *)main)[i]);
-	return (0);
+int bytes, i;
+char *arr;
+if (argc != 2)
+{
+printf("Error\n");
+exit(1);
+}
+bytes = atoi(argv[1]);
+if (bytes < 0)
+{
+printf("Error\n");
+exit(2);
+}
+arr = (char *)main;
+for (i = 0; i < bytes; i++)
+{
+if (i == bytes - 1)
+{
+printf("%02hhx\n", arr[i]);
+break;
+}
+printf("%02hhx ", arr[i]);
+}
+return (0);
 }
