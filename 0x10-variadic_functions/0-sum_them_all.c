@@ -1,6 +1,7 @@
-#include "variadic_functions.h
+#include "variadic_functions.h"
+#include <stdarg.h>
 /**
- * sum_them_all - main
+ * sum_them_all -  main
  * @n: main
  * Return: main
  */
