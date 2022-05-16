@@ -1,34 +1,85 @@
 #include "variadic_functions.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
- * print_strings - prints strings.
- * @separator: string to be printed between the strings.
- * @n: number of strings passed to the function.
- *
- * Return: no return.
+ * print_int - prints int
+ * @list: arguments from print_all
  */
-void print_strings(const char *separator, const unsigned int n, ...)
+void print_int(va_list list)
 {
-	va_list valist;
-	unsigned int i;
-	char *str;
+	printf("%d", va_arg(list, int));
+}
 
-	va_start(valist, n);
+/**
+ * print_float - prints float
+ * @list: arguments from print_all
+ */
+void print_float(va_list list)
+{
+	printf("%f", va_arg(list, double));
+}
 
-	for (i = 0; i < n; i++)
+/**
+ * print_char - prints int
+ * @list: arguments from print_all
+ */
+void print_char(va_list list)
+{
+	printf("%c", va_arg(list, int));
+}
+
+/**
+ * print_str - prints string
+ * @list: arguments from print_all
+ */
+void print_str(va_list list)
+{
+	char *s = va_arg(list, char *);
+
+	s == NULL ? printf("(nil)") : printf("%s", s);
+
+}
+
+/**
+ * print_all - prints any type
+ * @format: arguments to print
+ */
+
+void print_all(const char * const format, ...)
+{
+va_list list;
+int i = 0, j = 0;
+char *sep = "";
+
+printTypeStruct printType[] = {
+	{ "i", print_int },
+	{ "f", print_float },
+	{ "c", print_char },
+	{ "s", print_str },
+	{NULL, NULL}
+};
+
+
+va_start(list, format);
+
+while (format && format[i])
+{
+	j = 0;
+	while (j < 4)
 	{
-		str = va_arg(valist, char *);
-
-		if (str)
-			printf("%s", str);
-		else
-			printf("(nil)");
-
-		if (i < n - 1)
-			if (separator)
-				printf("%s", separator);
+		if (*printType[j].type == format[i])
+		{
+			printf("%s", sep);
+			printType[j].printer(list);
+			sep = ", ";
+			break;
+		}
+		j++;
 	}
+	i++;
+}
 
-	printf("\n");
-	va_end(valist);
+printf("\n");
+va_end(list);
 }
