@@ -1,4 +1,6 @@
 #include "variadic_functions.h"
+#include <stdlib.h>
+#include <stdio.h>
 /**
  * print_int - main
  * @list: main
