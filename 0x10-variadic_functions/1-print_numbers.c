@@ -2,7 +2,7 @@
 /**
  * print_numbers - main
  * @separator: main
- * @n: main
+ * @n: mai
  * Return: main
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
